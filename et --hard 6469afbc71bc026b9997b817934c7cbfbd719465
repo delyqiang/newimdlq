@@ -1,0 +1,49 @@
+[33mcommit 9712a64ff2f090bbdf02e69b62e3d5dc866e48bb[m[33m ([m[1;36mHEAD -> [m[1;32mgqq[m[33m)[m
+Merge: 6469afb f4447a0
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Wed May 22 17:57:27 2019 +0800
+
+    Merge branch 'dev' into gqq
+
+[33mcommit f4447a0a2054de9d014dc0feeb0766d1898be3e8[m[33m ([m[1;31morigin/dev[m[33m, [m[1;32mdev[m[33m)[m
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Wed May 22 17:56:33 2019 +0800
+
+    '批次交易详情截取文件名bug'
+
+[33mcommit 6469afbc71bc026b9997b817934c7cbfbd719465[m
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Wed May 22 17:53:32 2019 +0800
+
+    'beifen'
+
+[33mcommit ea077815198ce945a05280a89011ac1dffd28819[m[33m ([m[1;31morigin/gqq[m[33m)[m
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Tue May 21 19:03:51 2019 +0800
+
+    'ss'
+
+[33mcommit 70a017a338caa0134f4d9516fb975fa06fe87350[m
+Merge: b7a7be9 3a92696
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Mon May 20 10:55:29 2019 +0800
+
+    Merge branch 'dev' into gqq
+
+[33mcommit 3a9269684fdaddf1b179938600f4b95176f5dc54[m
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Fri May 17 18:17:24 2019 +0800
+
+    'logo'
+
+[33mcommit b7a7be9899fae4f31fc446536010a4f9afa5b036[m
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Fri May 17 18:14:25 2019 +0800
+
+    'qiang'
+
+[33mcommit 8cd386d15b2fec80a65047b0a25c52d7854b7ecf[m
+Author: 郭强强 <guoqq@i-counting.cn>
+Date:   Thu May 16 17:45:15 2019 +0800
+
+    'logo与bug修改正式版本首发'
