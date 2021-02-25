@@ -1,0 +1,409 @@
+
+$color-primary: #009788;
+$color-btnColor:#E87B3F;
+$--color-Theme:#FF3F38;//主题红色
+$--color-active:#F82018;//激活红色
+$--color-Pink:#FFF7F7;//粉色背景
+$--color-heard:#ADADAD;//头部文字
+$--color-page:#333333;//页面文字
+$--color-butie:#FF7C41;//省市区补贴
+$--color-overdue:#BBBBBB;//过期 大部分小字体
+$width-radius: 4px;
+
+// view-container
+.site-container {
+  background-color: #F1F1F1;
+  height: 100%;
+  width: 100%;
+  padding: 25px;
+}
+
+// 表格样式
+.site-table {
+  border-radius: $width-radius;
+
+  .el-table__header th,
+  .el-table__body td {
+    text-align: center;
+  }
+
+  .el-table__header th {
+    background-color: #FDF5EF;
+    color: #333;
+  }
+}
+
+// 标签页样式
+.site-tabs {
+  margin: 10px 0 0 10px;
+  .el-tabs__header {
+    margin: 0;
+  }
+  .el-tabs__item {
+    background-color: white;
+    color: gray;
+    border-top-left-radius: $width-radius;
+    border-top-right-radius: $width-radius;
+  }
+  &.el-tabs--card>.el-tabs__header .el-tabs__item.is-active {
+    background-color: #f1f1f1;
+    color: #E87B3F;
+    border-bottom: 0;
+  }
+}
+
+// 模态框样式
+.site-dialog {
+  .el-dialog__title {
+    color: #333333;
+  }
+  .el-dialog--center .el-dialog__body {
+    padding: 40px;
+    text-align: center;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+  }
+}
+
+// 按钮样式
+.site-container {
+  .site-button-1 {
+    background-color:$color-btnColor;
+    color: white;
+  }
+  .site-button-2 {
+    border-color: $color-btnColor;
+    color: $color-btnColor;
+  }
+  .site-button-3 {
+    background-color:$color-primary;
+    color: white;
+  }
+}
+
+.site-button-1 {
+  color: $--color-Theme !important;  
+  width: 42.49% !important;
+  height: 77px !important;
+  background: #FFF3F3 !important;
+  border: 1px solid $--color-Theme !important;
+  border-radius: 5px !important;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+}
+.site-button-2 {
+  color: #fff !important;  
+  width: 42.49% !important;
+  height: 77px !important;
+  background: $--color-Theme !important;
+  border: 1px solid $--color-Theme !important;
+  border-radius: 5px !important;
+  font-size: 30px !important;
+  font-weight: 500 !important;
+}
+.site-button-3 {
+  background-color:$color-primary !important;
+  color: white !important;
+}
+
+// 卡片样式
+.site-card {
+  border-radius: 30px !important;
+  .el-card__header {
+    background-color: $color-primary;
+    color: white;
+  }
+}
+
+
+
+
+// public style
+
+// 元素属性
+.inline-block{
+  display: inline-block;
+}
+.block{
+  display: block;
+}
+.pointe{
+  cursor:pointer
+}
+// 字体加粗
+.text-bold{
+  font-weight: bold;
+}
+// 字体颜色
+.text-white{
+  color: #fff !important;
+}
+.text-gray{
+  color: #999999;
+}
+.text-darkorange{
+  color: $color-btnColor !important;
+}
+.text-red{
+  color: red;
+}
+.text-333{
+  color: #333;
+}
+.text-666{
+  color: #666;
+}
+.text-999{
+  color: #999;
+}
+.text-blue{
+  color: #559FF6;
+}
+// 字体大小
+.text-sm{
+  font-size: 12px;
+}
+.text-ll{
+  font-size: 14px;
+}
+.text-xl{
+  font-size: 16px;
+}
+.text-xxl{
+  font-size: 20px;
+}
+.text-3xl{
+  font-size: 35px;
+}
+// 文本对齐
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+// 
+// colors
+.color-primary {
+  color: $color-primary !important;
+}
+
+// 背景颜色
+.bg-color{
+  background-color: $color-primary !important;
+}
+.bg-lightorange{
+  background-color: #FFAE82 !important;
+}
+.bg-Theme{
+  background-color: $--color-Theme !important;
+  
+}
+.bg-lightblue{
+  background-color: #8795EB;
+}
+.bg-lightpurple{
+  background-color:#B492E9;
+}
+.bg-linghtpink{
+  background-color:#F3AC9C;
+}
+.bg-skyblue{
+  background-color: #95C3F4;
+}
+
+// .border-radius
+.radius10{
+  border-radius: 10px !important;
+}
+.radius20{
+  border-radius: 20px !important;
+}
+.radius30{
+  border-radius: 30px !important;
+}
+
+// 内边距
+.padding0{
+  padding: 0;
+}
+.padding10{
+  padding: 10px !important;
+}
+.padding20{
+  padding: 20px !important;
+}
+.padding30{
+  padding: 30px !important;
+}
+// margin--外边距
+.margin0{
+  margin: 0;
+}
+.marginT0{
+  margin-top: 0px !important;
+}
+.marginT10{
+  margin-top: 10px !important;
+}
+.marginT20{
+  margin-top: 20px !important;
+}
+.marginT30 {
+  margin-top: 30px !important;
+}
+.marginT50{
+  margin-top: 50px !important;
+}
+.marginB0{
+  margin-bottom: 0px !important;
+}
+.marginB10{
+  margin-bottom: 10px !important;
+}
+.marginB20{
+  margin-bottom: 20px !important;
+}
+.marginB30{
+  margin-bottom: 30px !important;
+}
+.marginB40{
+  margin-bottom: 40px !important;
+}
+.marginB50{
+  margin-bottom: 50px !important;
+}
+.marginL10{
+  margin-left: 10px !important;
+}
+.marginL20{
+  margin-left: 20px !important;
+}
+.marginL30{
+  margin-left: 30px !important;
+}
+.marginR10{
+  margin-right: 10px !important;
+}
+.marginR20{
+  margin-right: 20px !important;
+}
+.marginR30{
+  margin-right: 30px !important;
+}
+.marginAuto{
+  margin:50px auto !important;
+}
+
+.input-width{
+  width: 400px !important;
+}
+
+// 浮动
+.fl{ 
+  float: left;
+}
+.fr{
+  float: right;
+}
+
+// flex
+.flex{
+  display: flex;
+}
+
+.flex-sub {
+	flex: 1;
+}
+.justify-start {
+	justify-content: flex-start;
+}
+
+.justify-end {
+	justify-content: flex-end;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.justify-between {
+	justify-content: space-between;
+}
+
+.justify-around {
+	justify-content: space-around;
+}
+
+// 对齐方式
+.v_sub{
+  vertical-align: sub;
+}
+.v_middle{
+  vertical-align: middle;
+}
+
+// img width
+.imginfo{
+  width: 260px;
+  cursor: pointer;
+}
+.imgLook{
+  text-align: center;
+  img{
+    max-width: 100%;
+  }
+}
+// border
+.border-radius{
+  border-radius: 10px;
+}
+.border-none{
+  border:none !important;
+}
+
+// 滚动条样式
+
+/*滚动条样式*/
+.scoll::-webkit-scrollbar {
+  display: none;
+}
+.scoll::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 4px; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+.scoll::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 5px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+}
+.scoll::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+.cur_poin{
+	cursor:pointer;
+}
+.fontw{
+	font-weight: 600;
+  color: #333333;
+  /*font-size: 14px;*/
+}
+.isBack{
+  padding-left: 20px;
+  background-color: #f1f1f1;
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.el-pagination{
+  text-align: right;
+  margin-top: 20px;
+}

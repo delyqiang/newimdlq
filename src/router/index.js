@@ -1,142 +1,160 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+Vue.use(Router)
 
+/* Layout */
+import Layout from '@/layout'
 
-const Index = () => import( '../pages/index.vue') //首页
-//user
-const Login = () => import( '../pages/user/Login.vue') //登录
-const Register = () => import( '../pages/user/Register.vue') //注册
-const FindPassword = () => import( '../pages/user/FindPassword.vue') //找回密码
-// Bought
-const BoughtList = () => import( '../pages/Bought/BoughtList.vue') //我的 我的订单 BoughtList
-// Collect
-const Cart = () => import( '../pages/Collect/Cart.vue')//购物车   Cart
-const Collect = () => import( '../pages/Collect/Collect.vue')//收藏 商品收藏 店铺收藏  Collect
-// commodity
-const ConfirmOrder = () => import( '../pages/commodity/ConfirmOrder.vue')//确认订单  ConfirmOrder
-const Item = () => import( '../pages/commodity/Item.vue')//商品详情  Item
-const ServiceCentre = () => import( '../pages/commodity/ServiceCentre.vue')//帮助中心   ServiceCentre  
-// Coupon
-const Coupon = () => import( '../pages/Coupon/Coupon.vue')//我的 我的优惠券  Coupon
-const RechargeableCard = () => import( '../pages/Coupon/RechargeableCard.vue')//我的 商城充值卡  RechargeableCard
-// PersonalData
-const DeliverAddress = () => import( '../pages/PersonalData/DeliverAddress.vue')//我的 收货地址管理 DeliverAddress
-const MyEvaluate = () => import( '../pages/PersonalData/MyEvaluate.vue')//我的 我的评价  MyEvaluate
-const MyFoot = () => import( '../pages/PersonalData/MyFoot.vue')//我的 我的足迹 MyFoot
-const PersonalData = () => import( '../pages/PersonalData/PersonalData.vue')//我的 个人资料 PersonalData
+// console.log(key)
 
-const View = () => import( '../pages/view.vue')
-const noFound = () => import( '../components/503')
-
-/*
- * 商户
- */
-const measurement = () => import( '../components/imgUpdown.vue')
-
-
-Vue.use(Router);
-
-const router = new Router({
-  mode:'history',
-  routes: [
-    {//登录页面
-      path: '/Login',
-      name: 'Login',
-      component: Login,
-    },
-    {//注册页面
-      path: '/Register',
-      name: 'Register',
-      component: Register,
-    },
-    {//注册页面
-      path: '/FindPassword',
-      name: 'FindPassword',
-      component: FindPassword,
-    },
-    {//首页
+export const constantRoutes = [
+  // 首页
+  {
+    path: '',
+    component: Layout,
+    redirect: '/index/page',
+    children: [{
       path: '/',
-      name: 'Index',
-      component: Index,
-    },
-    {//我的订单 BoughtList
-      path: '/BoughtList',
-      name: 'BoughtList',
-      component: BoughtList,
-    },
-    {//购物车   Cart
-      path: '/Cart',
-      name: 'Cart',
-      component: Cart,
-    },
-    {//收藏 商品收藏 店铺收藏  Collect
-      path: '/Collect',
-      name: 'Collect',
-      component: Collect,
-    },
-    {//确认订单  ConfirmOrder
-      path: '/ConfirmOrder',
-      name: 'ConfirmOrder',
-      component: ConfirmOrder,
-    },
-    {//商品详情  Item
-      path: '/Item',
-      name: 'Item',
-      component: Item,
-    },
-    {//帮助中心   ServiceCentre
-      path: '/ServiceCentre',
-      name: 'ServiceCentre',
-      component: ServiceCentre,
-    },
-    {//我的优惠券  Coupon
-      path: '/Coupon',
-      name: 'Coupon',
-      component: Coupon,
-    },
-    {//商城充值卡  RechargeableCard
-      path: '/RechargeableCard',
-      name: 'RechargeableCard',
-      component: RechargeableCard,
-    },
-    {//收货地址管理 DeliverAddress
-      path: '/DeliverAddress',
-      name: 'DeliverAddress',
-      component: DeliverAddress,
-    },
-    {//我的评价  MyEvaluate
-      path: '/MyEvaluate',
-      name: 'MyEvaluate',
-      component: MyEvaluate,
-    },
-    {//我的足迹 MyFoot
-      path: '/MyFoot',
-      name: 'MyFoot',
-      component: MyFoot,
-    },
-    {//个人资料 PersonalData
-      path: '/PersonalData',
-      name: 'PersonalData',
-      component: PersonalData,
-    },
-    {//服务需要做健康检查-健康检查路径
-      path: '/check',
-      name: 'check',
-    },
-    {//503页面
-      path: 'noFound',
-      name: 'noFound',
-      component: noFound
-    },
-    {
-      path: '/view',
-      name: 'View',
-      component: View,
-      children: [
-      ]
-    },
-    { path: '*', redirect: '/Login' }
+      name: '首页',
+      component: () => import('@/views/index/index')
+    }
+    ]
+  },
+  // login登录
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
+  // 注册
+  {
+    path: '/register',
+    component: () => import('@/views/login/register'),
+    hidden: true
+  },
+  // 忘记密码
+  {
+    path: '/findPassword',
+    component: () => import('@/views/login/FindPassword'),
+    hidden: true
+  },
+  // 购物车 收藏
+  {
+    path: '/collect',
+    component: Layout,
+    redirect: '/collect/page',
+    children: [
+      {
+        path: 'cart', // 购物车
+        component: () => import('@/views/Collect/Cart')
+      },
+      {
+        path: 'collect', // 收藏 商品收藏 店铺收藏
+        component: () => import('@/views/Collect/Collect')
+      }
+    ]
+  },
+  // 确认订单  // 商品详情   帮助中心
+  {
+    path: '/commodity',
+    component: Layout,
+    redirect: '/collect/page',
+    children: [
+      {
+        path: 'order', // 确认订单
+        component: () => import('@/views/commodity/ConfirmOrder')
+      },
+      {
+        path: 'item', // 商品详情
+        component: () => import('@/views/commodity/Item')
+      },
+      {
+        path: 'serviceCentre', // 帮助中心
+        component: () => import('@/views/commodity/ServiceCentre')
+      }
+    ]
+  },
 
-  ]
-});
+  // 我的订单 商城充值卡 我的优惠券 我的足迹 收货地址管理 我的评价 个人资料
+  {
+    path: '/my',
+    component: Layout,
+    redirect: '/my/page',
+    children: [
+      {
+        path: 'boughtList', // 我的订单
+        component: () => import('@/views/Bought/BoughtList')
+      },
+      {
+        path: 'rechargeableCard', // 商城充值卡
+        component: () => import('@/views/Coupon/RechargeableCard')
+      },
+      {
+        path: 'coupon', // 优惠券
+        component: () => import('@/views/Coupon/Coupon')
+      },
+      {
+        path: 'foot', // 我的足迹
+        component: () => import('@/views/PersonalData/MyFoot')
+      },
+      {
+        path: 'deliverAddress', // 收货地址管理
+        component: () => import('@/views/PersonalData/DeliverAddress')
+      },
+      {
+        path: 'evaluate', // 我的评价
+        component: () => import('@/views/PersonalData/MyEvaluate')
+      },
+      {
+        path: 'personalData', // 个人资料
+        component: () => import('@/views/PersonalData/PersonalData')
+      }
+    ]
+  },
+  // 404 page must be placed at the end !!!
+  {
+    path: '/404',
+    component: () => import('@/views/404'),
+    hidden: true
+  },
+
+  {
+    path: '*',
+    redirect: '/404',
+    hidden: true
+  }
+]
+// 解决刷新路由失效的问题
+// var key = JSON.parse(window.sessionStorage.getItem('keyPath'))
+// if (key) {
+//   constantRoutes.push({
+//     path: '',
+//     component: Layout,
+//     redirect: key,
+//     children: [{
+//       path: key,
+//       name: key + 1,
+//       component: () => import('@/views/idcard/AllList')
+//     }]
+//   })
+// }
+
+const createRouter = () => new Router({
+  // mode: 'history', // require service support ( 后端支持可开 )
+  scrollBehavior: () => ({
+    y: 0
+  }),
+  routes: constantRoutes
+})
+
+const router = createRouter()
+
+// Detail see: https://github.com/vuejs/vue-router/issues/1234#issuecomment-357941465
+export function resetRouter() {
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher // reset router
+}
+
 export default router
+
+// ********************************************************************

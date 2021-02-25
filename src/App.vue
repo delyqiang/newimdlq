@@ -1,28 +1,38 @@
 <template>
   <div id="app">
-    <!--<keep-alive>-->
-    <router-view></router-view>
-    <!--</keep-alive>-->
+    <router-view v-if="isRouterAlive" />
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'app',
-//    created: function () {
-    // appid 的缓存
-//      this.$logger(this.$route.query.appid);
-//      this.$logger('appvue created')
-//      this.$store.dispatch('setAppId', this.$route.query.appid)
-//    }
-  }
-</script>
+export default {
+  name: 'App',
+  provide() {
+    return {
+      reload: this.reload
+    }
+  },
+  data() {
+    return {
+      isRouterAlive: true
+    }
+  },
+  mounted() {
+    // window.onbeforeunload = function() {
+    //   localStorage.removeItem('mtwo')
+    // }
 
-<style>
-  #app{
-    height: 100%;
+  },
+  methods: {
+    reload() {
+      this.isRouterAlive = false
+      this.$nextTick(function() {
+        this.isRouterAlive = true
+      })
+    }
   }
-  #logoBack .paddLeft .ivu-input{
-    padding-left: 25px;
-  }
+}
+</script>
+<style lang="scss">
 </style>
+
