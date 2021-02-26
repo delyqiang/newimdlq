@@ -11,6 +11,14 @@ export default {
       params: param
     })
   },
+  // 注册
+  register(param) {
+    return request({
+      url: requestURL + '/pc/register',
+      method: 'post',
+      data: param
+    })
+  },
 
   // 首页data
   getIndexData() {
